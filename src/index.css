@@ -1,0 +1,23 @@
+:root {
+    --color-light: rgb(211, 211, 211);
+    --color-grey: rgb(43, 43, 43);
+    --color-dark: rgb(24, 24, 24);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--color-light);
+    font-family: 'Dosis', sans-serif;
+    overflow-x: hidden;
+    z-index: 1;
+}
