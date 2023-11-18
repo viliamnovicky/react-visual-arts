@@ -1,6 +1,8 @@
 :root {
     --color-light: rgb(211, 211, 211);
     --color-grey: rgb(43, 43, 43);
+    --color-grey-transp: rgba(43, 43, 43, .5);
+    --color-grey-transp-2: rgba(43, 43, 43, .2);
     --color-dark: rgb(24, 24, 24);
 }
 
@@ -22,8 +24,44 @@ body {
     z-index: 1;
 }
 
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 1.5rem;
+    transition: all 0.5s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(white, 0.8);
+    transition: all 0.5s;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-grey-transp-2);
+    transition: all 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-grey-transp);
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
 .margin-top-5 {
-    margin-top: 5rem;
+    margin-top: 5rem !important;
+}
+
+.margin-top-2 {
+    margin-top: 2rem !important;
 }
 
 .home-cont-right {
@@ -36,4 +74,14 @@ body {
     top: 50%;
     left: 10rem;
     transform: translateY(-50%);
+}
+
+.home-cont-center {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active {
+    background: rgba(43, 43, 43, .1);
 }

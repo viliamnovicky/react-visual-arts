@@ -1,9 +1,9 @@
 import styles from './HomeCont.module.css'
 
-function HomeCont({optClass}) {
+function HomeCont({optClass, children}) {
     return (
         <div className={`${styles.homeCont} ${optClass}`}>
-            fgdfgdfgfgdhfghfgjhfghj
+            {children}
         </div>
     )
 }

@@ -58,8 +58,8 @@
     color: var(--color-dark);
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.active {
-  background: var(--color-dark);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
