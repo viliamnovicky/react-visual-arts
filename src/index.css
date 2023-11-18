@@ -21,3 +21,19 @@ body {
     overflow-x: hidden;
     z-index: 1;
 }
+
+.margin-top-5 {
+    margin-top: 5rem;
+}
+
+.home-cont-right {
+    top: 50%;
+    right: 10rem;
+    transform: translateY(-50%);
+}
+
+.home-cont-left {
+    top: 50%;
+    left: 10rem;
+    transform: translateY(-50%);
+}

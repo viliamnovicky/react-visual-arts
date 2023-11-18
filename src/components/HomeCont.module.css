@@ -1,0 +1,6 @@
+.homeCont {
+    position: absolute;
+    display: block;
+    width: 70rem;
+    z-index: 100;
+}

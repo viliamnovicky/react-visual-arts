@@ -1,0 +1,12 @@
+.homeCont {
+    width: 100vw;
+    height: 70rem;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+    position: relative;
+    z-index: 1;
+  }
+
+.homeImage {
+    width: 100%;
+}
