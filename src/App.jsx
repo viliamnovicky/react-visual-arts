@@ -7,10 +7,20 @@ import Pricelist from "./pages/Pricelist";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
+import { getPortfolio } from "./services/apiPortfolio";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Header />
       <BrowserRouter>
         <Routes>
@@ -24,7 +34,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </>
+    </QueryClientProvider>
   );
 }
 
