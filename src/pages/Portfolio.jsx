@@ -1,10 +1,10 @@
 import styles from "./Portfolio.module.css";
 import Navbar from "../components/Navbar";
-import { getPortfolio } from "../services/apiPortfolio";
-import { usePortfolioData } from "../features/usePortfolioData";
-import { usePortfolioCategoriesImages } from "../features/usePortfolioCategoriesImages";
+import { usePortfolioData } from "../features/portfolio/usePortfolioData";
+import { usePortfolioCategoriesImages } from "../features/portfolio/usePortfolioCategoriesImages";
 import styled from "styled-components";
 import PortfolioCategory from "../ui/PortfolioCategory";
+import { NavLink } from "react-router-dom";
 
 const StyledPortfolio = styled.div`
   margin-top: 5rem;
@@ -20,7 +20,13 @@ function Portfolio() {
       <Navbar />
       <StyledPortfolio>
         {portfolioImages.map((image, index) => (
-          <PortfolioCategory image={image} name={portfolio[index].name} textAlign={index & 1 ? "right" : "left"} />
+          <NavLink to={portfolio[index].name}>
+            <PortfolioCategory
+              image={image}
+              name={portfolio[index].name}
+              textAlign={index & 1 ? "right" : "left"}
+            />
+          </NavLink>
         ))}
       </StyledPortfolio>
     </>

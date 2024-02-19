@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import Footer from "./components/Footer";
 import { getPortfolio } from "./services/apiPortfolio";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PortfolioImages from "./features/portfolio/PortfolioImages";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="domov" element={<Home />} />
           <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio/:id" element={<PortfolioImages />} />
           <Route path="obchod" element={<Store />} />
           <Route path="cennik" element={<Pricelist />} />
           <Route path="kontakt" element={<Contact />} />
