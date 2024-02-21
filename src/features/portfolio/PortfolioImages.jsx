@@ -89,7 +89,7 @@ function PortfolioImages() {
       <Navbar />
       <Portfolio>
         {portfolioImages.map((image) => (
-          <Image src={image} key={image} onClick={() => handleOpenModal(image)} />
+          typeof image !== "object" && <Image src={image} key={image} onClick={() => handleOpenModal(image)} />
         ))}
       </Portfolio>
       {isOpenModal && (
