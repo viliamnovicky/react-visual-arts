@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Header from "./components/Header";
+import Header from "./ui/Header";
 import Store from "./pages/Store";
 import Portfolio from "./pages/Portfolio";
 import Pricelist from "./pages/Pricelist";
@@ -10,6 +10,12 @@ import Footer from "./components/Footer";
 import { getPortfolio } from "./services/apiPortfolio";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PortfolioImages from "./features/portfolio/PortfolioImages";
+import Admin from "./pages/Admin";
+import AddNewImagesForm from "./features/dashboard/AddNewImagesForm";
+import AddNewCategoryForm from "./features/dashboard/AddNewCategoryForm";
+import GlobalStyles from "./styles/GlobalStyles";
+import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
+import AddNewProductForm from "./features/dashboard/AddNewProductForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,6 +28,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <GlobalStyles />
       <Header />
       <BrowserRouter>
         <Routes>
@@ -33,6 +40,12 @@ function App() {
           <Route path="cennik" element={<Pricelist />} />
           <Route path="kontakt" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="admin" element={<Admin />}>
+            <Route path="new-image" element={<AddNewImagesForm />} />
+            <Route path="new-category" element={<AddNewCategoryForm />} />
+            <Route path="new-blog" element={<AddNewBlogForm />} />
+            <Route path="new-product" element={<AddNewProductForm />} />
+          </Route>
         </Routes>
       </BrowserRouter>
       <Footer />

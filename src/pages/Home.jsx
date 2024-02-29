@@ -1,6 +1,7 @@
 import HomeCont from "../components/HomeCont";
 import HomeImage from "../components/HomeImage";
 import Navbar from "../components/Navbar";
+import Spinner from "../ui/Spinner";
 import styles from "./Home.module.css";
 
 function Home() {

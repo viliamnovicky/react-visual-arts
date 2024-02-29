@@ -1,5 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
 :root {
+    --color-white: rgb(240, 240, 240);
     --color-light: rgb(211, 211, 211);
+    --color-light-2: rgb(225, 225, 225);
     --color-grey: rgb(43, 43, 43);
     --color-grey-transp: rgba(43, 43, 43, .5);
     --color-grey-transp-2: rgba(43, 43, 43, .2);
@@ -10,7 +15,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    transition: all 0.5s;
+    //transition: all 0.5s;
 }
 
 html {
@@ -56,32 +61,9 @@ p {
     font-style: italic;
 }
 
-.margin-top-5 {
-    margin-top: 5rem !important;
-}
-
-.margin-top-2 {
-    margin-top: 2rem !important;
-}
-
-.home-cont-right {
-    top: 50%;
-    right: 10rem;
-    transform: translateY(-50%);
-}
-
-.home-cont-left {
-    top: 50%;
-    left: 10rem;
-    transform: translateY(-50%);
-}
-
-.home-cont-center {
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .active {
     background: rgba(43, 43, 43, .1);
 }
+`;
+
+export default GlobalStyles;

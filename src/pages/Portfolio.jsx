@@ -1,4 +1,3 @@
-import styles from "./Portfolio.module.css";
 import Navbar from "../components/Navbar";
 import { usePortfolioData } from "../features/portfolio/usePortfolioData";
 import { usePortfolioCategoriesImages } from "../features/portfolio/usePortfolioCategoriesImages";

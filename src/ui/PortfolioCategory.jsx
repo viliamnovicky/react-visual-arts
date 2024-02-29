@@ -15,10 +15,16 @@ const textAlign = {
 const Category = styled.div`
   width: 100%;
   position: relative;
+  overflow: hidden;
 `;
 
 const CategoryImage = styled.img`
   width: 100%;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const CategoryName = styled.h1`
@@ -29,6 +35,7 @@ const CategoryName = styled.h1`
   text-transform: uppercase;
   font-size: 12rem;
   color: rgba(234, 234, 234, 1);
+  font-weight: 100;
   ${(props) => textAlign[props.textAlign]}
 `;
 
