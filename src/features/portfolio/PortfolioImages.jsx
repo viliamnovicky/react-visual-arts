@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { usePortfolioImages } from "./usePortfolioImages";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Spinner from "../../ui/Spinner";
 
 const Portfolio = styled.div`
   margin: 5rem auto;
@@ -10,6 +11,7 @@ const Portfolio = styled.div`
   grid-template-columns: repeat(4, 1fr);
   width: 80vw;
   gap: 2rem;
+  min-height: 80rem;
 `;
 
 const Image = styled.img`
@@ -78,11 +80,9 @@ function PortfolioImages() {
   }
 
   const { id } = useParams();
-  console.log(id);
   const { isLoadingPortfolioImages, portfolioImages, error } = usePortfolioImages(id);
 
-  if (isLoadingPortfolioImages) return <p>Loading</p>;
-  console.log(portfolioImages);
+  if (isLoadingPortfolioImages) return <Spinner/>;
 
   return (
     <>

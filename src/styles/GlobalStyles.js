@@ -64,6 +64,34 @@ p {
 .active {
     background: rgba(43, 43, 43, .1);
 }
+.margin-top-5 {
+margin-top: 5rem;
+}
+
+.margin-top-3 {
+margin-top: 3rem;
+}
+
+.home-cont-left {
+    top: 50%;
+    left: 10rem;
+    transform: translateY(-50%);
+
+}
+
+.home-cont-right {
+    top: 50%;
+    right: 10rem;
+    transform: translateY(-50%);
+    
+}
+
+.home-cont-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
 `;
 
 export default GlobalStyles;

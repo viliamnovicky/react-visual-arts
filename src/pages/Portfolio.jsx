@@ -4,6 +4,7 @@ import { usePortfolioCategoriesImages } from "../features/portfolio/usePortfolio
 import styled from "styled-components";
 import PortfolioCategory from "../ui/PortfolioCategory";
 import { NavLink } from "react-router-dom";
+import Spinner from "../ui/Spinner"
 
 const StyledPortfolio = styled.div`
   margin-top: 5rem;
@@ -13,7 +14,7 @@ function Portfolio() {
   const { isLoading, portfolio, error } = usePortfolioData();
   const { isLoadingPortfolioCategoriesImages, portfolioImages } = usePortfolioCategoriesImages();
   console.log(portfolioImages);
-  if (isLoading || isLoadingPortfolioCategoriesImages) return <p>loading</p>;
+  if (isLoading || isLoadingPortfolioCategoriesImages) return <Spinner/>;
   return (
     <>
       <Navbar />
