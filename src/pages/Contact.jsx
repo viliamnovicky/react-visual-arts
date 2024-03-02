@@ -1,5 +1,4 @@
-import Navbar from '../components/Navbar'
-import styles from './Contact.module.css'
+import Navbar from '../ui/Navbar'
 
 function Contact() {
     return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../ui/Navbar";
 import { usePortfolioImages } from "./usePortfolioImages";
 import { useParams } from "react-router-dom";
 import { useState } from "react";

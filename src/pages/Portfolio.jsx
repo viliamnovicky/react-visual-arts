@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../ui/Navbar";
 import { usePortfolioData } from "../features/portfolio/usePortfolioData";
 import { usePortfolioCategoriesImages } from "../features/portfolio/usePortfolioCategoriesImages";
 import styled from "styled-components";

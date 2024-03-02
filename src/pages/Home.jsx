@@ -1,7 +1,6 @@
-import HomeCont from "../components/HomeCont";
-import HomeImage from "../components/HomeImage";
-import Navbar from "../components/Navbar";
-import styles from "./Home.module.css";
+import HomeCont from "../ui/HomeCont";
+import HomeImage from "../ui/HomeImage";
+import Navbar from "../ui/Navbar";
 
 function Home() {
   return (

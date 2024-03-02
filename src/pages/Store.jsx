@@ -1,5 +1,4 @@
-import Navbar from "../components/Navbar";
-import styles from "./Store.module.css";
+import Navbar from "../ui/Navbar";
 
 function Store() {
   return (

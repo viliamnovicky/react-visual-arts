@@ -1,5 +1,4 @@
-import Navbar from '../components/Navbar'
-import styles from './Blog.module.css'
+import Navbar from '../ui/Navbar'
 
 function Blog() {
     return (

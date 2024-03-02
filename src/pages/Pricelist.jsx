@@ -1,5 +1,4 @@
-import Navbar from "../components/Navbar";
-import styles from "./Pricelist.module.css";
+import Navbar from "../ui/Navbar";
 
 function Pricelist() {
   return (
