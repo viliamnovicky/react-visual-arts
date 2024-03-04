@@ -21,10 +21,14 @@ const FormGroup = styled.div`
 `;
 
 const Label = styled.label`
+  padding: 2rem;
   padding-bottom: 0.5rem;
   font-weight: 800;
   font-size: 2rem;
   color: var(--color-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 
 const Input = styled.input`
@@ -86,8 +90,13 @@ const Option = styled.option`
   font-size: 2rem;
   font-weight: 800;
   padding: 1rem;
-  
-
 `;
 
-export { Form, FormGroup, Label, Input, Select, Option };
+const Error = styled.span`
+  color: red;
+  font-size: 1.6rem;
+  text-align: right;
+  text-transform: uppercase;
+`
+
+export { Form, FormGroup, Label, Input, Select, Option, Error };

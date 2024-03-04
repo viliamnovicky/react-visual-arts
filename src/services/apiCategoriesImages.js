@@ -1,5 +1,5 @@
 import "firebase/storage";
-import { getDownloadURL, listAll, ref } from "firebase/storage";
+import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../utils/firebase";
 
 export async function getPortfolioCategoriesImagesUrls() {

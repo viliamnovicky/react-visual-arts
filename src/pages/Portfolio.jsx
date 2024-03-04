@@ -13,18 +13,31 @@ const StyledPortfolio = styled.div`
 function Portfolio() {
   const { isLoading, portfolio, error } = usePortfolioData();
   const { isLoadingPortfolioCategoriesImages, portfolioImages } = usePortfolioCategoriesImages();
-  console.log(portfolioImages);
+  
+  console.log(portfolio);
   if (isLoading || isLoadingPortfolioCategoriesImages) return <Spinner/>;
   return (
     <>
       <Navbar />
-      <StyledPortfolio>
+      {/* <StyledPortfolio>
         {portfolioImages.map((image, index) => (
           <NavLink to={portfolio[index].name}>
             <PortfolioCategory
               image={image}
               name={portfolio[index].name}
               textAlign={index & 1 ? "right" : "left"}
+            />
+          </NavLink>
+        ))}
+      </StyledPortfolio> */}
+      <StyledPortfolio>
+        {portfolio.map((category) => (
+          <NavLink to={category.name.toLowerCase()}>
+            <PortfolioCategory
+              image={category.coverImage}
+              name={category.name}
+              textAlign={"right"}
+              key={category.id}
             />
           </NavLink>
         ))}

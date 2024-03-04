@@ -16,6 +16,7 @@ import AddNewCategoryForm from "./features/dashboard/AddNewCategoryForm";
 import GlobalStyles from "./styles/GlobalStyles";
 import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
 import AddNewProductForm from "./features/dashboard/AddNewProductForm";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -49,6 +50,24 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={
+          ({ succes: { duration: 3000 } },
+          { error: { duration: 3000 } },
+          {
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              padding: "16px 24px",
+              backgroundColor: "var(--color-light)",
+              color: "var(--color-grey)",
+            },
+          })
+        }
+      />
     </QueryClientProvider>
   );
 }
