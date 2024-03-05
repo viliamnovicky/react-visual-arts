@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 :root {
     --color-white: rgb(240, 240, 240);
+    --color-white-transp: rgba(240, 240, 240, .5);
+    --color-white-transp-2: rgba(240, 240, 240, .8);
     --color-light: rgb(211, 211, 211);
     --color-light-2: rgb(225, 225, 225);
     --color-grey: rgb(43, 43, 43);
