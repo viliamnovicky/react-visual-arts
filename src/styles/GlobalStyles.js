@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     --color-grey: rgb(43, 43, 43);
     --color-grey-transp: rgba(43, 43, 43, .5);
     --color-grey-transp-2: rgba(43, 43, 43, .2);
+    --color-grey-transp-3: rgba(43, 43, 43, .8);
     --color-dark: rgb(24, 24, 24);
 }
 
@@ -29,6 +30,10 @@ body {
     font-family: 'Dosis', sans-serif;
     overflow-x: hidden;
     z-index: 1;
+}
+
+button {
+    font-family: "Dosis", sans-serif;
 }
 
 /* SCROLLBAR */

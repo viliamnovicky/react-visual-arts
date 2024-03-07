@@ -8,6 +8,9 @@ const StyledHeader = styled.header`
   animation: fadeIn;
   animation-duration: 1s;
   height: 22rem;
+  z-index:5;
+  background: var(--color-light);
+  position: relative;
 
   h1 {
     font-weight: 100;
@@ -15,12 +18,14 @@ const StyledHeader = styled.header`
     letter-spacing: 2.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    
   }
 
   h5 {
     font-size: 2rem;
     letter-spacing: 3rem;
     padding-bottom: 1rem;
+    
   }
 `;
 

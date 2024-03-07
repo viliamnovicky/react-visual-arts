@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNavbar = styled.nav`
-  z-index: 2;
+  z-index: 5;
   font-family: "Playfair Display";
   animation: fadeIn;
   animation-duration: 1s;
