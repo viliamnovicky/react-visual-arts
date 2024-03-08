@@ -150,11 +150,33 @@ const ButtonMessage = styled.a`
       margin-bottom: .2rem
     }
   `
+const Back = styled.a`
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 6rem;
+  right: 6rem;
+  background: var(--color-grey-transp);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.6rem;
+  transition: all .2s;
+  font-weight: 800;
+  border: 1px solid var(--color-white);
+
+  &:hover {
+    background: var(--color-grey-transp-3);
+  }
+`
 
 function Contact() {
   return (
     <>
-      <Navbar />
+      <Navbar id="top"/>
 
       <FixedBackground imageUrl={"../img/about01.jpg"}>
         <StyledContact>
@@ -251,6 +273,7 @@ function Contact() {
         </About>
         <ButtonMessage>Napísať správu</ButtonMessage>
       </FixedBackground>
+        <Back href="#top">späť nahor</Back>
     </>
   );
 }
