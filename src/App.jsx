@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Portfolio from "./pages/Portfolio";
 import Pricelist from "./pages/Pricelist";
-import Contact from "./pages/Contact";
+import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Admin from "./pages/Admin";
 import Header from "./ui/Header";
@@ -39,7 +39,7 @@ function App() {
           <Route path="portfolio/:id" element={<PortfolioImages />} />
           <Route path="obchod" element={<Store />} />
           <Route path="cennik" element={<Pricelist />} />
-          <Route path="kontakt" element={<Contact />} />
+          <Route path="kontakt" element={<About />} />
           <Route path="blog" element={<Blog />} />
           <Route path="admin" element={<Admin />}>
             <Route path="new-image" element={<AddNewImagesForm />} />

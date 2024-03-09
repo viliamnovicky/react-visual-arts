@@ -11,8 +11,10 @@ import email from "../../public/icons/email.svg";
 import person from "../../public/icons/person.svg";
 import contact from "../../public/icons/contact.svg";
 import location from "../../public/icons/location.svg";
+import Modal from "../ui/Modal";
+import { useState } from "react";
 
-const StyledContact = styled.div`
+const StyledAbout = styled.div`
   width: 60vw;
   background: transparent;
   top: 38%;
@@ -113,7 +115,7 @@ const Image = styled.img`
   filter: invert(100%) sepia(60%) saturate(5194%) hue-rotate(181deg) brightness(129%) contrast(88%);
 `;
 
-const About = styled.h6`
+const AboutText = styled.h6`
   color: var(--color-white);
   font-size: 2rem;
   font-weight: 800;
@@ -129,27 +131,27 @@ const About = styled.h6`
 `;
 
 const ButtonMessage = styled.a`
-    position: absolute;
-    bottom: 10rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 4rem;
-    width: 40rem;
-    height: 10rem;
-    color: var(--color-white);
-    font-weight: 100;
-    border-radius: 2rem;
-    background: var(--color-grey-transp);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  width: 40rem;
+  height: 10rem;
+  color: var(--color-white);
+  font-weight: 100;
+  border-radius: 2rem;
+  background: var(--color-grey-transp);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-    &:hover {
-      background: var(--color-grey-transp-3);
-      margin-bottom: .2rem
-    }
-  `
+  &:hover {
+    background: var(--color-grey-transp-3);
+    margin-bottom: 0.2rem;
+  }
+`;
 const Back = styled.a`
   width: 8rem;
   height: 8rem;
@@ -164,22 +166,28 @@ const Back = styled.a`
   color: var(--color-white);
   text-decoration: none;
   font-size: 1.6rem;
-  transition: all .2s;
+  transition: all 0.2s;
   font-weight: 800;
   border: 1px solid var(--color-white);
 
   &:hover {
     background: var(--color-grey-transp-3);
   }
-`
+`;
 
-function Contact() {
+function About() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  
+  function handleCloseModal() {
+    setIsOpenModal(false)
+  }
+  
   return (
     <>
-      <Navbar id="top"/>
+      <Navbar id="top" />
 
       <FixedBackground imageUrl={"../img/about01.jpg"}>
-        <StyledContact>
+        <StyledAbout>
           <Heading>
             <Image src={contact}></Image>Kontaktné údaje
           </Heading>
@@ -199,7 +207,7 @@ function Contact() {
             <span>
               <Image src={email}></Image>viliamnovicky@gmail.com
             </span>
-            <Button>správa</Button>
+            <Button onClick={() => setIsOpenModal(true)}>správa</Button>
           </Data>
           <Data>
             <span>
@@ -225,57 +233,60 @@ function Contact() {
             </span>
             <Button>mapa</Button>
           </Data>
-        </StyledContact>
+        </StyledAbout>
       </FixedBackground>
       <Description>O mne</Description>
       <FixedBackground imageUrl={"../img/about02.jpg"}>
-        <About>
+        <AboutText>
           Už od mala som veľmi neposedný. V priebehu života som bol posadnutý mnohými záľubami.
           Väčšinou mi táto vášeň vydržala zopár mesiacov a potom sa vytratila a ja som našiel znova
           niečo iné. Niekto by povedal, že som nerozhodný, že neviem, čo od života chcem. Ja si to
           však nemyslím. Náš čas na tomto svete je tak obmedzený a život nám ponúka tak veľa
           možností. Ja som z nich vždy chcel vyskúšať čo najviac. Veď ako sa hovorí, človek ľutuje
           viac veci ktoré nespravil a mohol, ako tie ktoré urobil.
-        </About>
+        </AboutText>
       </FixedBackground>
       <Description>Niektoré veci sa nemenia</Description>
       <FixedBackground imageUrl={"../img/about03.jpg"}>
-        <About>
+        <AboutText>
           No samozrejme, môj život nie je iba zhlukom náhodných vzplanutí. Sú v ňom aj konštanty,
           ktoré ho jasne definujú. Je to láska k prírode, potreba tvoriť, potreba rozvíjať svoje
           schopnosti a vedomosti. Rovnako sa v ňom nezaobídem bez pohybu akéhokoľvek druhu. A v
           neposlednom rade je tu samozrejme moja najväčšia vášeň, fotografovanie.
-        </About>
+        </AboutText>
       </FixedBackground>
       <Description>Byť "normálny" je nuda</Description>
       <FixedBackground imageUrl={"../img/about04.jpg"}>
-        <About>
+        <AboutText>
           Táto fotografia zachytáva, ako sa občerstvujem vo svojom prirodzenom prostredí.
-        </About>
+        </AboutText>
       </FixedBackground>
       <Description>Fotografické úspechy</Description>
       <FixedBackground imageUrl={"../img/about05.jpg"}>
-        <About>
+        <AboutText>
           Možno by som mal spomenúť aj niečo o mojich fotografických úspechoch. A vlastne, nie je
           čo. Nezúčastňujem sa súťaží. Hoci som dosť súťaživý človek, myslím, že umenie tu nie je
           preto, aby sme sa v ňom merali. Je to prostriedok na vyjadrenie našich pocitov. Spôsob
           uľavenia našej duši. Neexistuje žiadna merná jednotka, ktorá by posúdila kvalitu umenia.
           Pri fotení Vašej udalosti ma nezaujímajú názory kritikov, chcem, aby tie fotografie boli
           dokonalé pre Vás.
-        </About>
+        </AboutText>
       </FixedBackground>
       <Description>Kalokagatia</Description>
       <FixedBackground imageUrl={"../img/about06.jpg"}>
-        <About>
+        <AboutText>
           Som nesmierne rád, že je v mojom živote rovnováha. Veľkú zásluhu má na tom práve
           fotografovanie. Tento web nie je iba prehliadka mojich zručností, je v ňom uložené aj
           niečo z mojej podstaty. Ak som Vás zaujal, budem sa veľmi tešiť na našu spoluprácu.
-        </About>
+        </AboutText>
         <ButtonMessage>Napísať správu</ButtonMessage>
       </FixedBackground>
-        <Back href="#top">späť nahor</Back>
+      <Back href="#top">späť nahor</Back>
+      {isOpenModal && <Modal onClose={handleCloseModal}>
+        
+        </Modal>}
     </>
   );
 }
 
-export default Contact;
+export default About;

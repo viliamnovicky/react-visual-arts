@@ -15,7 +15,7 @@ const types = {
   `,
 
   price: css`
-    position: absolute ;
+    position: absolute;
     bottom: 15rem;
     left: 50%;
     transform: translateX(-50%);
@@ -26,7 +26,26 @@ const types = {
     text-transform: uppercase;
     color: var(--color-grey);
     opacity: 0;
-    font-family: 'Dosis', sans-serif;
+    font-family: "Dosis", sans-serif;
+  `,
+
+  close: css`
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    z-index: 121000;
+    border-radius: 50%;
+    width: 5rem !important;
+    height: 5rem !important;
+    background: rgba(230, 230, 230, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(230, 230, 230, 0.2);
+      transform: rotate(90deg);
+    }
   `,
 };
 
