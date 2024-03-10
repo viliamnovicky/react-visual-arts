@@ -6,7 +6,7 @@ const StyledBackgroundCont = styled.div`
   overflow: hidden;
   position: relative;
   z-index: 0;
-  border-bottom: 1px solid var(--color-grey)
+  border-bottom: 1px solid var(--color-grey);
 `;
 
 const Image = styled.img`

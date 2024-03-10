@@ -13,6 +13,8 @@ import contact from "../../public/icons/contact.svg";
 import location from "../../public/icons/location.svg";
 import Modal from "../ui/Modal";
 import { useState } from "react";
+import MessageForm from "../features/contact/MessageForm";
+import toast from "react-hot-toast";
 
 const StyledAbout = styled.div`
   width: 60vw;
@@ -92,7 +94,7 @@ const Data = styled.p`
     transition: all 0.5s;
   }
 
-  button {
+  button, a {
     visibility: hidden;
     color: var(--color-white);
     opacity: 0;
@@ -104,7 +106,7 @@ const Data = styled.p`
     width: 80%;
   }
 
-  &:hover button {
+  &:hover button, &:hover a {
     visibility: visible;
     opacity: 1;
   }
@@ -146,6 +148,7 @@ const ButtonMessage = styled.a`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all .2s;
 
   &:hover {
     background: var(--color-grey-transp-3);
@@ -177,11 +180,16 @@ const Back = styled.a`
 
 function About() {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  
+
   function handleCloseModal() {
-    setIsOpenModal(false)
+    setIsOpenModal(false);
   }
-  
+
+  function handleCopyNumber() {
+    navigator.clipboard.writeText("+421918311386")
+    toast.success("Telefónne číslo bolo skopírované");
+  }
+
   return (
     <>
       <Navbar id="top" />
@@ -195,43 +203,43 @@ function About() {
             <span>
               <Image src={person}></Image>Viliam Novický
             </span>
-            <Button></Button>
+            <Button color="hidden" ></Button>
           </Data>
           <Data>
             <span>
               <Image src={phone}></Image>+421 918 311 386
             </span>
-            <Button>kopírovať</Button>
+            <Button color="primary" onClick={() => handleCopyNumber()}>kopírovať</Button>
           </Data>
           <Data>
             <span>
               <Image src={email}></Image>viliamnovicky@gmail.com
             </span>
-            <Button onClick={() => setIsOpenModal(true)}>správa</Button>
+            <Button  color="primary" onClick={() => setIsOpenModal(true)}>správa</Button>
           </Data>
           <Data>
             <span>
               <Image src={instagram}></Image>viliamnovicky
             </span>
-            <Button>zobraziť</Button>
+            <Button color="primary" as="a" href="https://www.instagram.com/viliamnovicky" target="_blank">zobraziť</Button>
           </Data>
           <Data>
             <span>
               <Image src={facebook}></Image>Viliam Novický Visual Arts
             </span>
-            <Button>zobraziť</Button>
+            <Button color="primary" as="a" href="https://www.facebook.com/ViliamNovickyVisualArts" target="_blank">zobraziť</Button>
           </Data>
           <Data>
             <span>
-              <Image src={youtube}></Image>Viliam Novicky
+              <Image src={youtube} ></Image>Viliam Novicky
             </span>
-            <Button>zobraziť</Button>
+            <Button color="primary" as="a" href="https://www.youtube.com/channel/UCp9fNN9AzBfN6XVvNykU-_Q" target="_blank">zobraziť</Button>
           </Data>
           <Data>
             <span>
               <Image src={location}></Image>Kdekoľvek som potrebný
             </span>
-            <Button>mapa</Button>
+            <Button color="primary" >mapa</Button>
           </Data>
         </StyledAbout>
       </FixedBackground>
@@ -279,12 +287,14 @@ function About() {
           fotografovanie. Tento web nie je iba prehliadka mojich zručností, je v ňom uložené aj
           niečo z mojej podstaty. Ak som Vás zaujal, budem sa veľmi tešiť na našu spoluprácu.
         </AboutText>
-        <ButtonMessage>Napísať správu</ButtonMessage>
+        <ButtonMessage onClick={()=>setIsOpenModal(true)}>Napísať správu</ButtonMessage>
       </FixedBackground>
       <Back href="#top">späť nahor</Back>
-      {isOpenModal && <Modal onClose={handleCloseModal}>
-        
-        </Modal>}
+      {isOpenModal && (
+        <Modal onClose={handleCloseModal} background={"../img/kontakt-sprava.jpg"}>
+          <MessageForm />
+        </Modal>
+      )}
     </>
   );
 }

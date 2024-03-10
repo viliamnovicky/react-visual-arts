@@ -22,8 +22,8 @@ function AddNewImagesForm() {
   if (isLoading) return <Spinner />;
 
   return (
-    <Form>
-      <FormGroup>
+    <Form bg="secondary">
+      <FormGroup border="primary">
         <Label for="category">Kategória</Label>
         <Select>
           {portfolio.map((category) => (
@@ -35,12 +35,12 @@ function AddNewImagesForm() {
           <Option value="wedding">Svadba</Option> */}
         </Select>
       </FormGroup>
-      <FormGroup>
+      <FormGroup border="primary">
         <Label for="files">Vyberte Fotografie</Label>
         <Input type="file" id="files" multiple onChange={(e) => handleFileChange(e)} />
       </FormGroup>
-      <FormGroup>
-        <Button>Odoslať</Button>
+      <FormGroup border="primary">
+        <Button color="primary">Odoslať</Button>
       </FormGroup>
       <ChosenFiles files={chosenFiles} />
     </Form>

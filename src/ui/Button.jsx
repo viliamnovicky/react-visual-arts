@@ -49,22 +49,48 @@ const types = {
   `,
 };
 
+const colors = {
+  primary: css`
+    background: var(--color-grey-transp);
+    color: var(--color-white);
+
+    &:hover {
+      background: var(--color-grey-transp-3);
+    }
+  `,
+  secondary: css`
+  background: var(--color-white-transp);
+  color: var(--color-dark);
+
+  &:hover {
+    background: var(--color-white-transp-2);
+  }
+`,
+hidden: css`
+  opacity: 0;
+  background: transparent;
+  color: transparent;
+  cursor: default;
+`
+}
+
 const Button = styled.button`
   cursor: pointer;
   text-decoration: none;
   border: none;
-  ${(props) => types[props.type]}
-  background: var(--color-grey-transp-2);
-  transition: all 0.2s;
+  transition: all 0.2s !important;
   width: 17rem;
   height: 4rem;
   font-size: 2rem;
   border-radius: 50rem;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &:hover {
-    background: var(--color-grey-transp);
-    color: var(--color-white);
-  }
+  ${(props) => types[props.type]}
+  ${(props) => colors[props.color]}
 `;
 
 // Button.defaultProps = {

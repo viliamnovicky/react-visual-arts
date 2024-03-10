@@ -99,6 +99,19 @@ margin-top: 3rem;
     transform: translate(-50%, -50%);
     
 }
+
+@keyframes showModal {
+    from {width: 5vw; 
+        height: 5vh
+    };
+    to {width: 80vw;
+  height: 90vh;}
+}
+
+@keyframes opacity {
+    from {opacity: 0}
+    to {opacity: 1}
+}
 `;
 
 export default GlobalStyles;

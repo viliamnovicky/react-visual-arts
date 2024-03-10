@@ -33,8 +33,8 @@ function AddNewCategoryForm() {
     console.log(getValues().name)
   }
   return (
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormGroup>
+    <Form bg="secondary" onSubmit={handleSubmit(onSubmit, onError)}>
+      <FormGroup border="primary">
         <Label for="name">
           názov kategórie {errors?.name?.message && <Error>{errors.name.message}</Error>}
         </Label>
@@ -47,7 +47,7 @@ function AddNewCategoryForm() {
           })}
         ></Input>
       </FormGroup>
-      <FormGroup>
+      <FormGroup border="primary">
         <Label for="image">
           Vyberte Titulnú fotografiu
           {errors?.image?.message && <Error>{errors.image.message}</Error>}
@@ -61,8 +61,8 @@ function AddNewCategoryForm() {
           })}
         ></Input>
       </FormGroup>
-      <FormGroup>
-        <Button>Odoslať</Button>
+      <FormGroup border="primary">
+        <Button color="primary">Odoslať</Button>
       </FormGroup>
       {chosenFiles.length > 0 && <ChosenFiles type="category_cover" text={name} files={chosenFiles} />}
     </Form>
