@@ -9,11 +9,9 @@ const StyledSpinner = styled.div`
     align-items: center;
 
 `
-
 function Spinner() {
     return (
         <StyledSpinner>
-
             <RingSpinner color="var(--color-grey)" size={100}/>
         </StyledSpinner>
     )

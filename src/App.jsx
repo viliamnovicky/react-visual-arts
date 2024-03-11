@@ -35,7 +35,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="domov" element={<Home />} />
-          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio" element={<Portfolio />}/>
           <Route path="portfolio/:id" element={<PortfolioImages />} />
           <Route path="obchod" element={<Store />} />
           <Route path="cennik" element={<Pricelist />} />

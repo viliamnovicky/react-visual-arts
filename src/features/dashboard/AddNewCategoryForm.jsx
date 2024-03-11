@@ -32,6 +32,7 @@ function AddNewCategoryForm() {
     toast.error("Niečo sa nepodarilo");
     console.log(getValues().name)
   }
+
   return (
     <Form bg="secondary" onSubmit={handleSubmit(onSubmit, onError)}>
       <FormGroup border="primary">

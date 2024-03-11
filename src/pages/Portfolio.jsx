@@ -14,22 +14,13 @@ function Portfolio() {
   const { isLoading, portfolio, error } = usePortfolioData();
   const { isLoadingPortfolioCategoriesImages, portfolioImages } = usePortfolioCategoriesImages();
   
-  console.log(portfolio);
-  if (isLoading || isLoadingPortfolioCategoriesImages) return <Spinner/>;
+  if (!portfolio) return <Spinner/>;
+  if(!portfolioImages) return <Spinner/>
+  if(error) return <p>Error</p>
+  
   return (
     <>
       <Navbar />
-      {/* <StyledPortfolio>
-        {portfolioImages.map((image, index) => (
-          <NavLink to={portfolio[index].name}>
-            <PortfolioCategory
-              image={image}
-              name={portfolio[index].name}
-              textAlign={index & 1 ? "right" : "left"}
-            />
-          </NavLink>
-        ))}
-      </StyledPortfolio> */}
       <StyledPortfolio>
         {portfolio.map((category) => (
           <NavLink to={category.name.toLowerCase()}>
