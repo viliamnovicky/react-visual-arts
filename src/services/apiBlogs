@@ -1,0 +1,20 @@
+// import firebase from 'firebase/app';
+import "firebase/storage";
+import "firebase/database";
+import { addDoc, collection, getDocs, where } from "firebase/firestore/lite";
+import { database, storage } from "../utils/firebase";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { query } from "firebase/database";
+
+
+// Get a list of portfolio categories from Firebase
+export async function getBlogs() {
+  try {
+    const blogs = collection(database, "blogs");
+    const blogsData = await getDocs(blogs);
+    const blogsList = blogsData.docs.map((doc) => doc.data());
+    return blogsList;
+  } catch (error) {
+    throw new Error("Niečo sa nepodarilo")
+  }
+}

@@ -4,7 +4,7 @@ import Store from "./pages/Store";
 import Portfolio from "./pages/Portfolio";
 import Pricelist from "./pages/Pricelist";
 import About from "./pages/About";
-import Blog from "./pages/Blog";
+import Blogs from "./pages/Blogs";
 import Admin from "./pages/Admin";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
@@ -17,6 +17,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
 import AddNewProductForm from "./features/dashboard/AddNewProductForm";
 import { Toaster } from "react-hot-toast";
+import Blog from "./features/blogs/Blog";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,7 +41,8 @@ function App() {
           <Route path="obchod" element={<Store />} />
           <Route path="cennik" element={<Pricelist />} />
           <Route path="kontakt" element={<About />} />
-          <Route path="blog" element={<Blog />} />
+          <Route path="blog" element={<Blogs />} />
+          <Route path="blog/:id" element={<Blog />} />
           <Route path="admin" element={<Admin />}>
             <Route path="new-image" element={<AddNewImagesForm />} />
             <Route path="new-category" element={<AddNewCategoryForm />} />
