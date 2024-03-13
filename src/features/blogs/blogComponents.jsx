@@ -35,6 +35,7 @@ const Paragraph = styled.p`
     margin: auto;
     font-size: 2rem;
     font-weight: 800;
+    position: relative;
 `;
 
 const Image = styled.img`
@@ -42,6 +43,7 @@ width: 100%;
 margin: auto;
 width: 100%;
 border-radius: 2rem;
+cursor: pointer;
 `;
 
 const AnotherImages = styled.div`
@@ -53,4 +55,18 @@ const AnotherImages = styled.div`
     margin-bottom: 2rem;
 `
 
-export { Container, Heading, Paragraph, Image, AnotherImages };
+const Links = styled.div`
+    position: absolute;
+    bottom: -15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+`
+
+export { Container, Heading, Paragraph, Image, AnotherImages, Links };
