@@ -29,11 +29,12 @@ const StyledHeader = styled.header`
   }
 `;
 
-function Header() {
+function Header({children}) {
   return (
     <StyledHeader>
       <h1>VILIAM NOVICKÝ</h1>
       <h5>visual arts</h5>
+      {children}
     </StyledHeader>
   );
 }

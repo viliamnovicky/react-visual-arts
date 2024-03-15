@@ -23,7 +23,7 @@ function Portfolio() {
       <Navbar />
       <StyledPortfolio>
         {portfolio.map((category) => (
-          <NavLink to={category?.name?.toLowerCase()}>
+          <NavLink to={category?.name?.toLowerCase()} key={category.id + "link"}>
             <PortfolioCategory
               image={category.coverImage}
               name={category.name}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Portfolio from "./pages/Portfolio";
@@ -18,6 +18,7 @@ import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
 import AddNewProductForm from "./features/dashboard/AddNewProductForm";
 import { Toaster } from "react-hot-toast";
 import Blog from "./features/blogs/Blog";
+import BackButton from "./ui/BackButton";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,15 +29,16 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  
   return (
     <QueryClientProvider client={queryClient}>
       <GlobalStyles />
-      <Header />
+      <Header/>
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="domov" element={<Home />} />
-          <Route path="portfolio" element={<Portfolio />}/>
+          <Route path="portfolio" element={<Portfolio />} />
           <Route path="portfolio/:id" element={<PortfolioImages />} />
           <Route path="obchod" element={<Store />} />
           <Route path="cennik" element={<Pricelist />} />
