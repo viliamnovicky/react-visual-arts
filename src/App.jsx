@@ -18,7 +18,6 @@ import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
 import AddNewProductForm from "./features/dashboard/AddNewProductForm";
 import { Toaster } from "react-hot-toast";
 import Blog from "./features/blogs/Blog";
-import BackButton from "./ui/BackButton";
 
 const queryClient = new QueryClient({
   defaultOptions: {

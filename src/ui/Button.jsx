@@ -29,6 +29,19 @@ const types = {
     font-family: "Dosis", sans-serif;
   `,
 
+store: css`
+position: absolute;
+bottom: 5rem;
+left: 50%;
+transform: translateX(-50%);
+height: 5rem !important;
+width: 50% !important;
+font-weight: 800 !important;
+text-transform: uppercase;
+color: var(--color-grey);
+font-family: "Dosis", sans-serif;
+`,
+
   close: css`
     position: fixed;
     right: 2rem;

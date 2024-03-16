@@ -1,10 +1,11 @@
 import Navbar from "../ui/Navbar";
+import StoreItems from "../features/store/StoreItems";
 
 function Store() {
   return (
     <>
       <Navbar />
-      <div>Store</div>
+      <StoreItems/>
     </>
   );
 }

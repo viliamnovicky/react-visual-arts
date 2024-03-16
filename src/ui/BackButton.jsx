@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-const StyledBackButton = styled.button`
+const StyledBackButton = styled(NavLink)`
     position: absolute;
 `
 
