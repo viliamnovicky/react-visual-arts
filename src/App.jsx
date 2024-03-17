@@ -18,6 +18,7 @@ import AddNewBlogForm from "./features/dashboard/AddNewBlogForm";
 import AddNewProductForm from "./features/dashboard/AddNewProductForm";
 import { Toaster } from "react-hot-toast";
 import Blog from "./features/blogs/Blog";
+import StoreItemDetail from "./features/store/StoreItemDetail";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="portfolio/:id" element={<PortfolioImages />} />
           <Route path="obchod" element={<Store />} />
+          <Route path="obchod/:id" element={<StoreItemDetail />} />
           <Route path="cennik" element={<Pricelist />} />
           <Route path="kontakt" element={<About />} />
           <Route path="blog" element={<Blogs />} />
