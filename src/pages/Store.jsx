@@ -4,7 +4,6 @@ import StoreItems from "../features/store/StoreItems";
 function Store() {
   return (
     <>
-      <Navbar />
       <StoreItems/>
     </>
   );

@@ -5,6 +5,7 @@ import PortfolioCategory from "../ui/PortfolioCategory";
 import styled from "styled-components";
 import Spinner from "../ui/Spinner";
 import BlogCover from "../features/blogs/BlogCover";
+import ErrorPage from "./ErrorPage";
 
 const StyledBlog = styled.div`
   display: grid;
@@ -18,6 +19,7 @@ function Blogs() {
   console.log(blogs);
 
   if (isLoadingBlogs) return <Spinner />;
+  if (!blogs) return <ErrorPage />;
 
   return (
     <>
