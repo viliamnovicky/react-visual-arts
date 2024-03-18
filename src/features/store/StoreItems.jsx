@@ -37,6 +37,7 @@ function StoreItems() {
           <StoreItem item={item} />
         ))}
       </StyledStoreItems>
+      
     </>
   );
 }

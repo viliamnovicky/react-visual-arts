@@ -19,7 +19,7 @@ function Blogs() {
   console.log(blogs);
 
   if (isLoadingBlogs) return <Spinner />;
-  if (!blogs) return <ErrorPage />;
+  if (!blogs) return <ErrorPage error={errorBlogs.message}/>;
 
   return (
     <>

@@ -109,6 +109,14 @@ margin-top: 3rem;
   height: 90vh;}
 }
 
+@keyframes showModalImage {
+    from {width: 5vw; 
+        height: 5vh
+    };
+    to {width: 69vw;
+    height: 46vw;}
+}
+
 @keyframes opacity {
     from {opacity: 0}
     to {opacity: 1}

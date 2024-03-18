@@ -6,6 +6,7 @@ import Spinner from "../../ui/Spinner";
 import Button from "../../ui/Button";
 import { useState } from "react";
 import Modal from "../../ui/Modal";
+import sunset from "../../../public/img/sunset.jpg"
 
 const ItemDetail = styled.div`
   display: flex;
@@ -19,6 +20,17 @@ const ItemDetail = styled.div`
   max-width: 1366px;
   height: 910px;
   background: url(${(props) => props.bg}) no-repeat center center/cover;
+`;
+
+const ItemDescription = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 5rem auto;
+  max-width: 1366px;
+  gap: 2rem;
 `;
 
 const Heading = styled.h1`
@@ -36,8 +48,9 @@ const Heading = styled.h1`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 50%;
   border-radius: 2rem;
+  cursor: pointer;
 `;
 
 const Details = styled.div`
@@ -51,11 +64,14 @@ const Details = styled.div`
 
 const Detail = styled.div`
   text-align: center;
+  font-size: 2rem;
+  
   h1 {
     text-transform: uppercase;
     padding: 2rem 0;
     background: var(--color-white-transp-2);
     margin: 2px 0;
+    font-size: 2rem;
   }
 
   p {
@@ -79,15 +95,15 @@ const ButtonCont = styled.div`
 `;
 
 function StoreItemDetail() {
-    const [isOpenModal, setIsOpenModal] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const { id } = useParams();
   const { isLoadingStore, store, errorStore } = useStoreData();
 
   if (isLoadingStore) return <Spinner />;
 
   function handleOpenModal() {
-    setIsOpenModal(true)
-    console.log(isOpenModal)
+    setIsOpenModal(true);
+    console.log(isOpenModal);
   }
 
   let item = store?.filter((item) => item.name === id);
@@ -118,11 +134,24 @@ function StoreItemDetail() {
           </Detail>
         </Details>
         <ButtonCont type="store_item">
-            <Button color="primary" onClick={handleOpenModal}>detail</Button>
-            <Button color="secondary">do košíka</Button>
+          <Button color="primary" onClick={handleOpenModal}>
+            detail
+          </Button>
+          <Button color="secondary">do košíka</Button>
         </ButtonCont>
       </ItemDetail>
-      {isOpenModal && <Modal background={item.imageUrl} onClose={() => setIsOpenModal(false)}/>}
+      <ItemDescription>
+        <Detail>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ab esse enim consequuntur
+          nostrum cupiditate aspernatur amet voluptatem iste odio repellendus qui ut fuga, tempore
+          sit, suscipit quisquam sint harum! Facere quo illo perferendis? Quisquam nam mollitia ab
+          velit exercitationem?
+        </Detail>
+        <Image src={sunset}></Image>
+      </ItemDescription>
+      {isOpenModal && (
+        <Modal background={item.imageUrl} type="image" onClose={() => setIsOpenModal(false)} />
+      )}
     </>
   );
 }

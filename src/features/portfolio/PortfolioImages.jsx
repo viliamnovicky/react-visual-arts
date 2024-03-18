@@ -4,6 +4,7 @@ import { usePortfolioImages } from "./usePortfolioImages";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../../ui/Spinner";
+import Modal from "../../ui/Modal";
 
 const Portfolio = styled.div`
   margin: 5rem auto;
@@ -19,36 +20,6 @@ const Image = styled.img`
   border-radius: 1rem;
   margin: auto;
   cursor: pointer;
-`;
-
-const Modal = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 11000;
-  overflow: hidden;
-  backdrop-filter: blur(3px);
-`;
-
-const ModalInner = styled.div`
-    position: absolute;
-    left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vw;
-  height: 40vw;
-`
-
-const ModalImage = styled.img`
-  width: 60vw;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 12000;
 `;
 
 const Button = styled.button`
@@ -77,6 +48,7 @@ function PortfolioImages() {
     setIsOpenModal(true);
     setImage(src);
     console.log("click");
+    console.log(image)
   }
 
   const { id } = useParams();
@@ -93,11 +65,7 @@ function PortfolioImages() {
         ))}
       </Portfolio>
       {isOpenModal && (
-        <Modal onClick={() => setIsOpenModal(false)}>
-          <ModalInner>
-            <Button onClick={() => setIsOpenModal(false)}>&#x2715;</Button>
-            <ModalImage src={image} />
-          </ModalInner>
+        <Modal onClose={() => setIsOpenModal(false)} background={image} type="image">
         </Modal>
       )}
     </>
