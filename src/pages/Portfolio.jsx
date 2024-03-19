@@ -16,7 +16,7 @@ function Portfolio() {
   const { isLoadingPortfolioCategoriesImages, portfolioImages } = usePortfolioCategoriesImages();
   
   if (isLoading || isLoadingPortfolioCategoriesImages) return <Spinner/>;
-  if(!portfolio || !portfolioImages) return <ErrorPage error={error.message}/>
+  if(!portfolio || !portfolioImages) return <ErrorPage error={error?.message ? error.message : "Niečo sa nepodarilo" }/>
   
   return (
     <>
