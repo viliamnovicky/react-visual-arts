@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     --color-grey-transp: rgba(43, 43, 43, .5);
     --color-grey-transp-2: rgba(43, 43, 43, .2);
     --color-grey-transp-3: rgba(43, 43, 43, .8);
+    --color-grey-transp-4: rgba(43, 43, 43, .1);
     --color-dark: rgb(24, 24, 24);
 }
 

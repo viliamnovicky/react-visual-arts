@@ -7,9 +7,10 @@ const bgs = {
     label {
       color: var(--color-white);
     }
-    
-    input {
-      background: var(--color-white-transp-2) !important;;
+
+    input,
+    textarea {
+      background: var(--color-white-transp-2) !important;
     }
   `,
   secondary: css`
@@ -19,7 +20,8 @@ const bgs = {
       color: var(--color-dark);
     }
 
-    input {
+    input,
+    textarea {
       background: var(--color-light-2) !important;
     }
   `,
@@ -157,4 +159,66 @@ const Error = styled.span`
   text-transform: uppercase;
 `;
 
-export { Form, FormGroup, Label, Input, Select, Option, Error, Textarea };
+const CheckBoxes = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+`;
+
+const StyledCheckBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  background: var(--color-grey-transp-4);
+  border-radius: 50rem;
+  padding: 1rem;
+`;
+
+const Dot = styled.label`
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-grey-transp-2);
+  cursor: pointer;
+  border: 0.7rem solid var(--color-white);
+  outline: 1px solid var(--color-grey-transp);
+  transition: all 0.2s;
+`;
+
+const CheckBoxHidden = styled.input`
+  opacity: 0;
+  cursor: pointer;
+
+  & ~ p {
+    text-decoration: line-through;
+    padding: 0 1rem;
+    font-size: 2rem;
+  }
+
+  &:checked ~ label {
+    background: var(--color-grey);
+    outline: 2px solid var(--color-grey);
+    border: 0.1rem solid var(--color-white);
+  }
+
+  &:checked ~ label ~ p {
+    text-decoration: none;
+    font-weight: 800;
+  }
+`;
+
+function CheckBox({ label }) {
+  return (
+    <StyledCheckBox>
+      <CheckBoxHidden type="checkbox" id={label} value={label}/>
+      <Dot for={label} />
+      <p>{label}</p>
+    </StyledCheckBox>
+  );
+}
+
+export { Form, FormGroup, Label, Input, Select, Option, Error, Textarea, CheckBoxes, CheckBox };
