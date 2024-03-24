@@ -49,6 +49,12 @@ const Link = styled.li`
   font-size: 1.6rem;
   text-transform: uppercase;
   position: relative;
+
+  @media screen and (max-width: 1000px){
+      font-size: 1.2rem;
+    }
+
+  
 `;
 
 const Anchor = styled(NavLink)`

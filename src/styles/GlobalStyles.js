@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+
 :root {
     --color-white: rgb(240, 240, 240);
     --color-white-transp: rgba(240, 240, 240, .5);

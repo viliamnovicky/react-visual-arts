@@ -12,12 +12,21 @@ const StyledHeader = styled.header`
   background: var(--color-light);
   position: relative;
 
+  @media screen and (max-width: 1000px){
+    height: 17rem;
+    }
+
   h1 {
     font-weight: 100;
     font-size: 7.5rem;
     letter-spacing: 2.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @media screen and (max-width: 1000px){
+      font-size: 4rem;
+      letter-spacing: 1rem;
+    }
     
   }
 
@@ -25,6 +34,11 @@ const StyledHeader = styled.header`
     font-size: 2rem;
     letter-spacing: 3rem;
     padding-bottom: 1rem;
+
+    @media screen and (max-width: 1000px){
+      font-size: 1.6rem;
+      letter-spacing: 2rem;
+    }
     
   }
 `;
