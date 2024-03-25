@@ -9,9 +9,27 @@ const StyledFooter = styled.footer`
   align-items: center;
   gap: 10rem;
 
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 8rem;
+  }
+
   p {
     font-size: 2rem;
     color: white;
+
+    @media screen and (max-width: 1000px) {
+    padding-top: 2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-top: 1rem;
+    font-size: 1.6rem;
+  }
   }
 `;
 
@@ -20,6 +38,7 @@ const FooterLinks = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
 `;
 
 const FooterLink = styled.a`
@@ -30,6 +49,11 @@ const FooterLink = styled.a`
   align-self: center;
   position: relative;
   transition: all 0.2s;
+
+  @media screen and (max-width: 1000px) {
+    width: 10vw;
+    height: auto;
+  }
 
   &:hover {
     background: var(--color-grey);
@@ -43,6 +67,11 @@ const FooterLink = styled.a`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 1000px) {
+    width: 2rem;
+    height: 2rem;
+  }
   }
 `;
 

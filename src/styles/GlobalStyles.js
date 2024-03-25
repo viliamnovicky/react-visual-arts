@@ -87,12 +87,22 @@ margin-top: 3rem;
     left: 10rem;
     transform: translateY(-50%);
 
+    @media screen and (max-width: 1000px){
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
 }
 
 .home-cont-right {
     top: 50%;
     right: 10rem;
     transform: translateY(-50%);
+
+    @media screen and (max-width: 1000px){
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     
 }
 
@@ -100,6 +110,8 @@ margin-top: 3rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    
     
 }
 

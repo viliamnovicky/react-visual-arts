@@ -27,6 +27,11 @@ const StyledHeader = styled.header`
       font-size: 4rem;
       letter-spacing: 1rem;
     }
+
+    @media screen and (max-width: 500px){
+      font-size: 3rem;
+      letter-spacing: .5rem;
+    }
     
   }
 
@@ -38,6 +43,11 @@ const StyledHeader = styled.header`
     @media screen and (max-width: 1000px){
       font-size: 1.6rem;
       letter-spacing: 2rem;
+    }
+
+    @media screen and (max-width: 500px){
+      font-size: 1.2rem;
+      letter-spacing: 1rem;
     }
     
   }

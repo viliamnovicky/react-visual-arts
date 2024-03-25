@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHomeImage = styled.div`
   width: 100vw;
-  height: 70rem;
+  height: auto;
   overflow: hidden;
   border-bottom: 1px solid white;
   position: relative;
