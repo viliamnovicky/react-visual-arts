@@ -54,6 +54,10 @@ const Link = styled.li`
       font-size: 1.2rem;
     }
 
+    @media screen and (max-width: 600px){
+      font-size: 1rem;
+    }
+
   
 `;
 

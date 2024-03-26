@@ -20,6 +20,11 @@ const ItemDetail = styled.div`
   max-width: 1366px;
   height: 910px;
   background: url(${(props) => props.bg}) no-repeat center center/cover;
+
+  @media screen and (max-width: 1366px){
+    width: calc(100vw - 4rem);
+    height: 50rem;
+    }
 `;
 
 const ItemDescription = styled.div`
@@ -31,6 +36,11 @@ const ItemDescription = styled.div`
   margin: 5rem auto;
   max-width: 1366px;
   gap: 2rem;
+
+  @media screen and (max-width: 1366px){
+    flex-direction: column;
+    padding: 2rem;
+    }
 `;
 
 const Heading = styled.h1`
@@ -111,7 +121,7 @@ function StoreItemDetail() {
   return (
     <>
       <Navbar />
-      <ItemDetail bg={item.imageUrl}>
+      <ItemDetail bg="https://firebasestorage.googleapis.com/v0/b/viliam-novicky-visual-arts.appspot.com/o/portfolio%2Fpr%C3%ADroda%2Fprir05.jpg?alt=media&token=25e03932-dcfc-4fd6-8314-1c9d06a0f4b7">
         <Heading type="store_item">{item.name}</Heading>
         <Details>
           <Detail>

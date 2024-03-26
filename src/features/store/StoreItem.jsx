@@ -57,7 +57,7 @@ const Button = styled(NavLink)`
 
 function StoreItem({ item }) {
   return (
-    <StyledStoreItem bg={item.imageUrl}>
+    <StyledStoreItem bg="https://firebasestorage.googleapis.com/v0/b/viliam-novicky-visual-arts.appspot.com/o/portfolio%2Fpr%C3%ADroda%2Fprir05.jpg?alt=media&token=25e03932-dcfc-4fd6-8314-1c9d06a0f4b7">
       <Heading type="store">{item.name}</Heading>
       <Button to={item.name} type="store" color="secondary">
         detail

@@ -8,6 +8,16 @@ const StyledHomeImage = styled.div`
   position: relative;
   z-index: 1;
   background: url(${(props) => props.imageUrl}) no-repeat center center/cover;
+
+  @media screen and (max-width: 1000px){
+    height: 50rem;
+    }
+  @media screen and (max-width: 600px){
+    height: 35rem;
+    }
+
+    
+
 `;
 
 const Image = styled.img`

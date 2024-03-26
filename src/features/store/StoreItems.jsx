@@ -6,12 +6,17 @@ import ErrorPage from "../../pages/ErrorPage";
 import Navbar from "../../ui/Navbar";
 
 const StyledStoreItems = styled.div`
-  width: 1366px;
+  max-width: 1366px;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: auto;
   gap: 2rem;
   margin-top: 5rem;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr
+  }
 `;
 
 function StoreItems() {
