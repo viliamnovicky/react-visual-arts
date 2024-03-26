@@ -23,13 +23,13 @@ const StyledFooter = styled.footer`
     color: white;
 
     @media screen and (max-width: 1000px) {
-    padding-top: 2rem;
-  }
+      padding-top: 2rem;
+    }
 
-  @media screen and (max-width: 600px) {
-    padding-top: 1rem;
-    font-size: 1.6rem;
-  }
+    @media screen and (max-width: 600px) {
+      padding-top: 1rem;
+      font-size: 1.6rem;
+    }
   }
 `;
 
@@ -38,7 +38,6 @@ const FooterLinks = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-
 `;
 
 const FooterLink = styled.a`
@@ -69,9 +68,9 @@ const FooterLink = styled.a`
     transform: translate(-50%, -50%);
 
     @media screen and (max-width: 1000px) {
-    width: 2rem;
-    height: 2rem;
-  }
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;
 

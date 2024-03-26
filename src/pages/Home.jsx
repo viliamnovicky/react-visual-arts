@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <HomeImage image={"01.jpg"} optClass={"margin-top-5"}>
+      <HomeImage imageUrl={"../01.jpg"} optClass={"margin-top-5"}>
         <HomeCont optClass="home-cont-right">
           <h1>Viac ako fotografia</h1>
           <p className="italic">
@@ -20,7 +20,7 @@ function Home() {
           </p>
         </HomeCont>
       </HomeImage>
-      <HomeImage image={"02.jpg"}>
+      <HomeImage imageUrl={"../02.jpg"}>
         <HomeCont optClass="home-cont-left">
           <p>
             Snom mnohých ľudí je robiť v živote to, čo ich baví, čo ich napĺňa. Patrím medzi nich aj
@@ -28,12 +28,12 @@ function Home() {
           </p>
         </HomeCont>
       </HomeImage>
-      <HomeImage image={"03.jpg"}>
+      <HomeImage imageUrl={"../03.jpg"}>
         <HomeCont optClass="home-cont-left">
           <p>Som stále plný nových nápadov a stále mám chuť sa zlepšovať.</p>
         </HomeCont>
       </HomeImage>
-      <HomeImage image={"04.jpg"}>
+      <HomeImage imageUrl={"../04.jpg"}>
         <HomeCont optClass="home-cont-center">
           <p>
             Ak hľadáte fotografa, pre ktorého Vaša významná udalosť nebude iba ďalšou zákazk ou, ak
