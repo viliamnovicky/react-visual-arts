@@ -12,6 +12,15 @@ const StyledBlog = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 5rem;
+  padding: 0 2rem;
+
+  @media screen and (max-width: 1366px){
+    grid-template-columns: 1fr 1fr;
+    }
+
+  @media screen and (max-width: 1000px){
+    grid-template-columns: 1fr;
+    }
 `;
 
 function Blogs() {
