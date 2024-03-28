@@ -11,6 +11,14 @@ const StyledBlogCover = styled.div`
   &:hover {
     background-size: 110%;
   }
+
+  @media screen and (max-width: 1366px){
+    height: 33vw;
+    }
+
+  @media screen and (max-width: 1000px){
+    height: 66vw;
+    }
 `;
 
 const Date = styled.p`
