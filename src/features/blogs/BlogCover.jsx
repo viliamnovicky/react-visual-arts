@@ -27,6 +27,10 @@ const Date = styled.p`
   right: 2rem;
   color: var(--color-white);
   font-weight: 800;
+
+  @media screen and (max-width: 1000px){
+    font-size: 1.2rem;
+    }
 `;
 
 const NameCont = styled.h1`
@@ -40,11 +44,26 @@ const NameCont = styled.h1`
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (max-width: 1366px){
+    gap: 1rem;
+    }
+  @media screen and (max-width: 1000px){
+    gap: .5rem;
+    }
 `;
 
 const Name = styled.h1`
   color: var(--color-white);
   font-size: 3rem;
+
+  @media screen and (max-width: 1366px){
+    font-size: 2rem;
+    }
+
+  @media screen and (max-width: 1000px){
+    font-size: 1.6rem;
+    }
 `;
 
 const Button = styled(NavLink)`
@@ -58,6 +77,16 @@ const Button = styled(NavLink)`
 
     &:hover {
         background: var(--color-white-transp-2);
+    }
+
+    @media screen and (max-width: 1366px){
+      padding: .5rem 3rem;
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: 1000px){
+    font-size: 1.2rem;
+    padding: .4rem 2rem;
     }
 `
 

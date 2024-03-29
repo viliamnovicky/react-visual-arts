@@ -13,6 +13,7 @@ const StyledBlog = styled.div`
   gap: 2rem;
   margin-top: 5rem;
   padding: 0 2rem;
+  margin-bottom: 1px;
 
   @media screen and (max-width: 1366px){
     grid-template-columns: 1fr 1fr;
