@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const Category = styled.div`
   width: 100%;
-  height: 35rem;
+  height: 17vw;
   position: relative;
   overflow: hidden;
   transition: all 0.2s;
@@ -11,9 +11,10 @@ const Category = styled.div`
   filter: grayscale(50%);
 
   @media screen and (max-width: 1000px) {
+    height: 30vw;
   }
 
-  &:hover  {
+  &:hover {
     filter: grayscale(0%);
   }
 
@@ -26,6 +27,10 @@ const CategoryImage = styled.img`
   width: 100%;
   opacity: 0.8;
   transition: all 0.2s;
+
+  @media screen and (max-width: 1366px) {
+    opacity: 1;
+  }
 `;
 
 const CategoryName = styled.h1`
@@ -41,8 +46,24 @@ const CategoryName = styled.h1`
   text-align: center;
   font-weight: 800;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1366px) {
+    color: var(--color-white);
     font-size: 10rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 7rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 250px) {
+    font-size: 2rem;
   }
 `;
 

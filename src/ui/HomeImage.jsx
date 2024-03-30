@@ -12,6 +12,7 @@ const StyledHomeImage = styled.div`
   @media screen and (max-width: 1000px){
     height: 50rem;
     }
+    
   @media screen and (max-width: 600px){
     height: 35rem;
     }
