@@ -13,6 +13,15 @@ const Portfolio = styled.div`
   width: 80vw;
   gap: 2rem;
   min-height: 80rem;
+
+  @media screen and (max-width: 1366px) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90vw;
+  }
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    width: 95vw;
+  }
 `;
 
 const Image = styled.img`
@@ -48,25 +57,27 @@ function PortfolioImages() {
     setIsOpenModal(true);
     setImage(src);
     console.log("click");
-    console.log(image)
+    console.log(image);
   }
 
   const { id } = useParams();
   const { isLoadingPortfolioImages, portfolioImages, error } = usePortfolioImages(id);
 
-  if (isLoadingPortfolioImages) return <Spinner/>;
+  if (isLoadingPortfolioImages) return <Spinner />;
 
   return (
     <>
       <Navbar />
       <Portfolio>
-        {portfolioImages.map((image) => (
-          typeof image !== "object" && <Image src={image} key={image} onClick={() => handleOpenModal(image)} />
-        ))}
+        {portfolioImages.map(
+          (image) =>
+            typeof image !== "object" && (
+              <Image src={image} key={image} onClick={() => handleOpenModal(image)} />
+            )
+        )}
       </Portfolio>
       {isOpenModal && (
-        <Modal onClose={() => setIsOpenModal(false)} background={image} type="image">
-        </Modal>
+        <Modal onClose={() => setIsOpenModal(false)} background={image} type="image"></Modal>
       )}
     </>
   );
